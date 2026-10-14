@@ -1,0 +1,94 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="static/css/Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+  <div class="sidebar">
+	   <div class="sidebar-brand">
+
+           <p style="font-size:17px;text-align:left;margin-top:14px;"><b style="margin-right:60px">Système Gestion de Parking</b></p>
+       </div>
+       <hr>
+       <br>
+       <div class="sidebar-menu">
+		<ul>
+			<li>
+              <a href="{% url 'Accueil'%} " class="active">
+                <span class="fa fa-home"></span>
+                <span>Accueil</span>
+              </a>
+            </li>
+
+			<li>
+                <a href="{% url 'ListeClients' %} ">
+                    <span class="fa-solid fa-users"></span>
+                    <span>Client</span>
+                </a>
+            </li>
+
+			<li>
+                <a href="{% url 'ListeReservation'%} ">
+                    <span class="fa-solid fa-calendar-check"></span>
+                    <span>Réservation</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'ListePlacesLibres'%} ">
+                    <i class="fa-solid fa-square-parking"></i>
+                    <span>Places Libres </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'ListeAbonnement' %} ">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Abonnements</span>
+                </a>
+            </li>
+
+             <li>
+                <a href=" ">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Paramètre</span>
+                </a>
+            </li>
+
+		</ul>
+        <div class="content">
+         <header>
+	        <p><label for="menu"><span class="fa fa-bars"></span></label><span class="accueil">Accueil</span></p>
+
+	        <div class="search-wrapp">
+		        <span class="fa fa-search"></span>
+		        <input type="search" name="" placeholder="Rechercher">
+	        </div>
+
+	        <div id="dropdown" class="user-wrapp">
+		       <div>
+		         <img decoding="async" src="static/images/how-to-become-a-web-developer.jpg" width="30" height="30" class="logo-admin"style="margin-left:40px">
+                 <p style="color:#008ea1 ;"><b>Boughal kawtar</b></p>
+               </div>
+		        <div class="dropdown-content">
+                    <a href=" "style="color: #008ea1;"><p> À propos </p></a>
+			        <a href="{%  url 'Login' %}" style="color: #008ea1;"><p>Deconnexion</p></a>
+                </div>
+	        </div>
+          </header>
+
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

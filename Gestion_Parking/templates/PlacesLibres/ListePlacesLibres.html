@@ -1,0 +1,118 @@
+{% block title %} {% endblock title %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+{% block main_content %}
+<style>
+.bg-nav{
+	box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+	background: #fff;
+	z-index: 1000;
+}
+.navbar .navbar-brand{
+	color:#008ea1;
+	font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #fff;
+    background:#008ea1;
+    border-radius: 5px;
+}
+.navbar-text{
+	color: #666;
+    font-weight: bold;
+}
+
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-nav">
+      <div class="container-fluid">
+            <a class="navbar-brand" href="#"><b>Système de Gestion de Parking</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'Dashboard' %}"><b>Accueil</b></a>
+              </li>
+             <li class="nav-item">
+                <a class="nav-link" href="{% url 'ListePlacesLibres' %}"><b>Liste Des Places Libres </b></a>
+             </li>
+          </ul>
+          <span class="navbar-text">
+              <img src="static/images/how-to-become-a-web-developer.jpg" alt="" width="30" height="30" class="logo-admin"style="margin-left:40px">
+              <p>Kawtar Boughal</p>
+          </span>
+        </div>
+      </div>
+    </nav>
+<section class="container" style="margin-top:-20px">
+    <br>
+    <br>
+    <div class="row justify-content-around text-center mt-5">
+        <div class="col-sm-8 ">
+            <h3>Liste des Places Libres</h3>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-around mt-3">
+        <div class="col-sm-8">
+            <a href="{% url 'AjouterPlacesLibres' %}" class='btn btn-primary float-end'>Ajouter un Place Libre</a>
+
+        </div>
+
+    </div>
+    <br>
+
+
+      <div class="row justify-content-around text-white mt-1">
+        <div class="col-sm-8 ">
+            <table class="table table-dark table-hover">
+                <thead>
+                  <tr>
+                      <th scope="col" style="text-align:center"> id Places Libres</th>
+                      <th scope="col" style="text-align:center"> Nombre Place Disponible</th>
+                      <th scope="col"style="text-align:center">Nombre Place Reserver</th>
+                       <th scope="col"style="text-align:center">Action</th>
+
+
+                  </tr>
+               </thead>
+               <tbody>
+               {% for Places in PlacesLibresdata  %}
+                  <tr>
+                      <th scope="row">{{Places.id}}</th>
+                      <td>{{Places.NombrePlaceDisponible}}</td>
+                      <td>{{Places.NombrePlaceReserver}}</td>
+
+                      <td class="aline-inline">
+                          <table>
+                              <tr>
+
+                                  <td>
+                                       <a href="{% url 'ModifierPlacesLibres' Places.id %}" class="btn btn-info btn-sm">Modifier</a>
+                                  </td>
+
+                              </tr>
+                          </table>
+                      </td>
+                  </tr>
+               {% endfor %}
+               </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+</section>
+{% endblock main_content %}

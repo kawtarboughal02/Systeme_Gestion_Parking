@@ -1,0 +1,34 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# --- Environnements virtuels ---
+venv/
+venv_fix/
+VenV/
+.venv/
+env/
+
+# --- Base de donnees locale ---
+db.sqlite3
+*.sqlite3
+
+# --- Fichiers statiques collectes (regeneres par collectstatic) ---
+/root/
+
+# --- IDE ---
+.idea/
+.vscode/
+
+# --- Journaux et fichiers temporaires ---
+*.log
+_*.txt
+_*.log
+_*.err
+*.tmp
+
+# --- Systeme ---
+.DS_Store
+Thumbs.db
